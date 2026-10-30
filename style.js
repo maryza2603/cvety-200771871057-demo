@@ -116,10 +116,10 @@
           picks.push(el.dataset.say ? el.dataset.say.replace("{v}", el.value) : el.dataset.label.toLowerCase() + " " + el.value + (el.dataset.unit ? " " + el.dataset.unit : ""));
         } else if (el.type === "radio" && el.checked) {
           total += (+el.dataset.price || 0) * (per[el.name] ? val(per[el.name]) : 1);
-          picks.push(el.dataset.label.toLowerCase());
+          picks.push(el.dataset.say || el.dataset.label.toLowerCase());
         } else if (el.type === "checkbox" && el.checked) {
           total += (+el.dataset.price || 0) * (per[el.name] ? val(per[el.name]) : 1);
-          picks.push(el.dataset.label.toLowerCase());
+          picks.push(el.dataset.say || el.dataset.label.toLowerCase());
         }
       });
       const min = +calc.dataset.min || 0; let minNote = "";
